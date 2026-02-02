@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ['Cormorant Garamond', 'serif'],
+        serif: ['Playfair Display', 'serif'],
         sans: ['Inter', 'sans-serif'],
       },
       colors: {
@@ -51,13 +51,17 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        zen: {
-          gold: "hsl(var(--zen-gold))",
-          stone: "hsl(var(--zen-stone))",
-          moss: "hsl(var(--zen-moss))",
-          cream: "hsl(var(--zen-cream))",
-          bark: "hsl(var(--zen-bark))",
+        earth: {
+          charcoal: "hsl(var(--earth-charcoal))",
+          muted: "hsl(var(--earth-muted))",
         },
+        neon: {
+          green: "hsl(var(--neon-green))",
+        },
+        forest: {
+          green: "hsl(var(--forest-green))",
+        },
+        snow: "hsl(var(--snow))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
