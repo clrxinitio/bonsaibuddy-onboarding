@@ -1,12 +1,11 @@
 import { Leaf } from "lucide-react";
-
 interface StepEntryProps {
   onNext: () => void;
 }
-
-const StepEntry = ({ onNext }: StepEntryProps) => {
-  return (
-    <div className="zen-container">
+const StepEntry = ({
+  onNext
+}: StepEntryProps) => {
+  return <div className="zen-container bg-secondary-foreground">
       <div className="flex flex-col items-center text-center max-w-md space-y-12">
         {/* Logo */}
         <div className="animate-zen-fade-in opacity-0">
@@ -23,10 +22,7 @@ const StepEntry = ({ onNext }: StepEntryProps) => {
 
         {/* CTA */}
         <div className="animate-zen-fade-in opacity-0 delay-400 pt-8">
-          <button 
-            onClick={onNext}
-            className="zen-button-primary text-lg"
-          >
+          <button onClick={onNext} className="zen-button-primary text-lg">
             Begin Your Journey
           </button>
         </div>
@@ -40,8 +36,6 @@ const StepEntry = ({ onNext }: StepEntryProps) => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default StepEntry;
