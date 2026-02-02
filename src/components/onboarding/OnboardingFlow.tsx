@@ -11,15 +11,16 @@ const TOTAL_STEPS = 7;
 
 const OnboardingFlow = () => {
   const [currentStep, setCurrentStep] = useState(0);
+  const [direction, setDirection] = useState<'left' | 'right'>('right');
 
   const nextStep = useCallback(() => {
+    setDirection('right');
     setCurrentStep(prev => Math.min(prev + 1, TOTAL_STEPS - 1));
   }, []);
 
   const handleComplete = () => {
-    // In a real app, this would navigate to the main app
     console.log("Onboarding complete!");
-    setCurrentStep(0); // Reset for demo
+    setCurrentStep(0);
   };
 
   const renderStep = () => {
@@ -44,7 +45,10 @@ const OnboardingFlow = () => {
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div 
+      className="relative min-h-screen overflow-hidden"
+      style={{ background: 'hsl(12, 10%, 10%)' }}
+    >
       {/* Progress indicator */}
       {currentStep > 0 && currentStep < 6 && (
         <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
@@ -52,23 +56,28 @@ const OnboardingFlow = () => {
             {Array.from({ length: TOTAL_STEPS - 1 }).map((_, i) => (
               <div
                 key={i}
-                className={`h-1 rounded-full transition-all duration-500 ${
-                  i < currentStep 
-                    ? 'w-6 bg-primary' 
+                className="rounded-full transition-all duration-500"
+                style={{
+                  width: i < currentStep ? '24px' : i === currentStep ? '24px' : '8px',
+                  height: '4px',
+                  background: i < currentStep 
+                    ? 'hsl(145, 90%, 52%)' 
                     : i === currentStep 
-                      ? 'w-6 bg-primary/50' 
-                      : 'w-2 bg-muted'
-                }`}
+                      ? 'hsl(145, 90%, 52%, 0.5)' 
+                      : 'hsl(0 0% 100% / 0.1)',
+                  boxShadow: i < currentStep ? '0 0 8px hsl(145 90% 52% / 0.5)' : 'none'
+                }}
               />
             ))}
           </div>
         </div>
       )}
 
-      {/* Step content with transition */}
+      {/* Step content with horizontal slide transition */}
       <div 
         key={currentStep}
-        className="animate-zen-fade-in"
+        className="animate-earth-slide-right"
+        style={{ animationDuration: '0.5s' }}
       >
         {renderStep()}
       </div>
