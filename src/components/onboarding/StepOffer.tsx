@@ -1,18 +1,21 @@
 import { Check, Sparkles, Bell, Leaf } from "lucide-react";
-
 interface StepOfferProps {
   onComplete: () => void;
 }
-
-const features = [
-  { icon: Sparkles, text: "Unlimited AI health reports" },
-  { icon: Bell, text: "Seasonal care alerts" },
-  { icon: Leaf, text: "Personalized watering schedules" },
-];
-
-const StepOffer = ({ onComplete }: StepOfferProps) => {
-  return (
-    <div className="zen-container">
+const features = [{
+  icon: Sparkles,
+  text: "Unlimited AI health reports"
+}, {
+  icon: Bell,
+  text: "Seasonal care alerts"
+}, {
+  icon: Leaf,
+  text: "Personalized watering schedules"
+}];
+const StepOffer = ({
+  onComplete
+}: StepOfferProps) => {
+  return <div className="zen-container bg-secondary-foreground">
       <div className="flex flex-col items-center text-center max-w-md space-y-10">
         {/* Badge */}
         <div className="animate-zen-scale opacity-0">
@@ -34,20 +37,15 @@ const StepOffer = ({ onComplete }: StepOfferProps) => {
         {/* Features Card */}
         <div className="w-full zen-card space-y-4 animate-zen-slide-up opacity-0 delay-200">
           {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <div 
-                key={index}
-                className="flex items-center gap-4 p-3 rounded-lg bg-muted/50"
-              >
+          const Icon = feature.icon;
+          return <div key={index} className="flex items-center gap-4 p-3 rounded-lg bg-muted/50">
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
                   <Icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
                 </div>
                 <span className="font-medium text-foreground">{feature.text}</span>
                 <Check className="w-5 h-5 text-primary ml-auto" />
-              </div>
-            );
-          })}
+              </div>;
+        })}
         </div>
 
         {/* Pricing */}
@@ -57,17 +55,11 @@ const StepOffer = ({ onComplete }: StepOfferProps) => {
 
         {/* CTA */}
         <div className="w-full space-y-4 animate-zen-fade-in opacity-0 delay-400">
-          <button 
-            onClick={onComplete}
-            className="zen-button-primary w-full text-lg py-5"
-          >
+          <button onClick={onComplete} className="zen-button-primary w-full text-lg py-5">
             Start Free Trial
           </button>
           
-          <button 
-            onClick={onComplete}
-            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-          >
+          <button onClick={onComplete} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
             Maybe later
           </button>
         </div>
@@ -88,8 +80,6 @@ const StepOffer = ({ onComplete }: StepOfferProps) => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default StepOffer;
