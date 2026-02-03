@@ -6,8 +6,9 @@ import StepRitual from "./StepRitual";
 import StepLab from "./StepLab";
 import StepIdentity from "./StepIdentity";
 import StepOffer from "./StepOffer";
+import StepConsent from "./StepConsent";
 
-const TOTAL_STEPS = 7;
+const TOTAL_STEPS = 8;
 
 const OnboardingFlow = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -38,7 +39,9 @@ const OnboardingFlow = () => {
       case 5:
         return <StepIdentity onNext={nextStep} />;
       case 6:
-        return <StepOffer onComplete={handleComplete} />;
+        return <StepOffer onNext={nextStep} />;
+      case 7:
+        return <StepConsent onComplete={handleComplete} />;
       default:
         return <StepEntry onNext={nextStep} />;
     }

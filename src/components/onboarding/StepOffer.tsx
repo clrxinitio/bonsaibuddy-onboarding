@@ -1,7 +1,7 @@
 import { Check, Zap } from "lucide-react";
 
 interface StepOfferProps {
-  onComplete: () => void;
+  onNext: () => void;
 }
 
 const features = [
@@ -38,7 +38,7 @@ const features = [
   },
 ];
 
-const StepOffer = ({ onComplete }: StepOfferProps) => {
+const StepOffer = ({ onNext }: StepOfferProps) => {
   return (
     <div className="earth-container py-4 min-h-screen flex items-center">
       <div className="flex flex-col items-center text-center max-w-2xl w-full space-y-4">
@@ -127,7 +127,7 @@ const StepOffer = ({ onComplete }: StepOfferProps) => {
             </p>
           </div>
 
-          <button onClick={onComplete} className="earth-button-primary w-full text-base py-4 font-medium">
+          <button onClick={onNext} className="earth-button-primary w-full text-base py-4 font-medium">
             Start 7-Day Free Trial
           </button>
         </div>
@@ -149,7 +149,7 @@ const StepOffer = ({ onComplete }: StepOfferProps) => {
             </div>
           </div>
           <button 
-            onClick={onComplete} 
+            onClick={onNext} 
             className="text-xs transition-colors hover:opacity-80"
             style={{ color: 'hsl(12, 8%, 45%)' }}
           >
