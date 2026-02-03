@@ -46,8 +46,11 @@ const StepLab = ({ onNext }: StepLabProps) => {
   }, [onNext]);
 
   return (
-    <div className="earth-container">
-      <div className="flex flex-col items-center text-center max-w-md space-y-12">
+    <div 
+      className="min-h-screen w-full flex flex-col px-6 py-8"
+      style={{ background: 'hsl(12, 10%, 10%)' }}
+    >
+      <div className="flex-1 flex flex-col items-center justify-center text-center max-w-md mx-auto space-y-12">
         {/* Neon Animation */}
         <div className="relative w-44 h-44">
           {/* Spinning ring */}

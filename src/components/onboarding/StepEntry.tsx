@@ -6,8 +6,11 @@ interface StepEntryProps {
 
 const StepEntry = ({ onNext }: StepEntryProps) => {
   return (
-    <div className="earth-container">
-      <div className="flex flex-col items-center text-center max-w-md space-y-12">
+    <div 
+      className="min-h-screen w-full flex flex-col px-6 py-8"
+      style={{ background: 'hsl(12, 10%, 10%)' }}
+    >
+      <div className="flex-1 flex flex-col items-center justify-center text-center max-w-md mx-auto space-y-12">
         {/* Logo with neon glow */}
         <div className="animate-earth-fade-in opacity-0">
           <div className="w-24 h-24 rounded-full flex items-center justify-center animate-neon-pulse"
@@ -24,22 +27,13 @@ const StepEntry = ({ onNext }: StepEntryProps) => {
           <h1 className="earth-title text-5xl md:text-6xl">BonsaiBuddy</h1>
           <p className="earth-tagline">Patience, practiced.</p>
         </div>
+      </div>
 
-        {/* CTA */}
-        <div className="animate-earth-fade-in opacity-0 delay-400 pt-8">
-          <button onClick={onNext} className="earth-button-primary text-lg">
-            Begin Your Journey
-          </button>
-        </div>
-
-        {/* Decorative element */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 animate-earth-fade-in opacity-0 delay-600">
-          <div className="flex items-center gap-2" style={{ color: 'hsl(12, 8%, 35%)' }}>
-            <div className="w-8 h-px" style={{ background: 'hsl(0 0% 100% / 0.1)' }} />
-            <span className="text-xs tracking-widest">SCROLL</span>
-            <div className="w-8 h-px" style={{ background: 'hsl(0 0% 100% / 0.1)' }} />
-          </div>
-        </div>
+      {/* CTA - Fixed at bottom */}
+      <div className="w-full max-w-md mx-auto animate-earth-fade-in opacity-0 delay-400 pb-4">
+        <button onClick={onNext} className="earth-button-primary w-full text-base py-4 font-medium">
+          Begin Your Journey
+        </button>
       </div>
     </div>
   );

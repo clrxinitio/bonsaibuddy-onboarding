@@ -6,8 +6,11 @@ interface StepIdentityProps {
 
 const StepIdentity = ({ onNext }: StepIdentityProps) => {
   return (
-    <div className="earth-container">
-      <div className="flex flex-col items-center text-center max-w-md space-y-10">
+    <div 
+      className="min-h-screen w-full flex flex-col px-6 py-8"
+      style={{ background: 'hsl(12, 10%, 10%)' }}
+    >
+      <div className="flex-1 flex flex-col items-center justify-center text-center max-w-md mx-auto space-y-8">
         {/* Header */}
         <div className="space-y-4 animate-earth-fade-in opacity-0">
           <p className="earth-tagline">The Identity</p>
