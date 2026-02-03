@@ -38,7 +38,7 @@ const StepProof = ({ onNext }: StepProofProps) => {
       <div className="flex flex-col items-center text-center max-w-lg space-y-6">
         {/* Header */}
         <div className="space-y-3 animate-earth-fade-in opacity-0">
-          <p className="earth-tagline">The Proof</p>
+          <p className="earth-tagline">The Result</p>
           <h2 className="earth-title text-3xl md:text-4xl">
             Stop <span className="neon-glow">Guessing</span>.
           </h2>
@@ -49,9 +49,12 @@ const StepProof = ({ onNext }: StepProofProps) => {
 
         {/* Animated Line Chart */}
         <div className="w-full earth-card p-5 animate-earth-scale opacity-0 delay-300">
+          <p className="text-xs font-medium mb-3" style={{ color: 'hsl(12, 8%, 55%)', letterSpacing: '0.05em' }}>
+            Tree Health Progress
+          </p>
           <svg 
             viewBox={`0 0 ${chartWidth} ${chartHeight}`} 
-            className="w-full h-36"
+            className="w-full h-32"
             preserveAspectRatio="xMidYMid meet"
           >
             {/* Grid lines */}
@@ -137,14 +140,14 @@ const StepProof = ({ onNext }: StepProofProps) => {
           </svg>
           
           {/* Legend */}
-          <div className="flex items-center justify-center gap-6 mt-4 pt-3" style={{ borderTop: '1px solid hsl(0 0% 100% / 0.08)' }}>
+          <div className="flex items-center justify-center gap-6 mt-3 pt-3" style={{ borderTop: '1px solid hsl(0 0% 100% / 0.08)' }}>
             <div className="flex items-center gap-2">
               <div className="w-2.5 h-2.5 rounded-sm" style={{ background: '#ef4444' }} />
-              <span className="text-xs" style={{ color: 'hsl(12, 8%, 55%)' }}>Without Pro</span>
+              <span className="text-xs" style={{ color: 'hsl(12, 8%, 55%)' }}>Traditional Guesswork</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2.5 h-2.5 rounded-sm neon-dot" />
-              <span className="text-xs" style={{ color: 'hsl(12, 8%, 55%)' }}>With BonsaiBuddy Pro</span>
+              <span className="text-xs" style={{ color: 'hsl(12, 8%, 55%)' }}>With BonsaiBuddy</span>
             </div>
           </div>
         </div>
@@ -152,7 +155,7 @@ const StepProof = ({ onNext }: StepProofProps) => {
         {/* Continue */}
         <div className="animate-earth-fade-in opacity-0 delay-500 pt-2">
           <button onClick={onNext} className="earth-button-primary">
-            See How It Works
+            Continue
           </button>
         </div>
       </div>
