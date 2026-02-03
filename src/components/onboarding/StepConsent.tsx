@@ -1,4 +1,5 @@
 import { Leaf } from "lucide-react";
+import PrivacyPolicyModal from "./PrivacyPolicyModal";
 
 interface StepConsentProps {
   onComplete: () => void;
@@ -56,13 +57,14 @@ const StepConsent = ({ onComplete }: StepConsentProps) => {
 
         {/* Legal Links */}
         <div className="flex items-center justify-center gap-4">
-          <a 
-            href="#" 
-            className="text-xs transition-colors hover:opacity-80"
-            style={{ color: 'hsl(12, 8%, 45%)' }}
-          >
-            Privacy Policy
-          </a>
+          <PrivacyPolicyModal>
+            <button 
+              className="text-xs transition-colors hover:opacity-80"
+              style={{ color: 'hsl(12, 8%, 45%)' }}
+            >
+              Privacy Policy
+            </button>
+          </PrivacyPolicyModal>
           <span style={{ color: 'hsl(12, 8%, 35%)' }}>•</span>
           <a 
             href="#" 
