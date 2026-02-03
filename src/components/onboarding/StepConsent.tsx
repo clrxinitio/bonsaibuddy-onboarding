@@ -1,5 +1,6 @@
 import { Leaf } from "lucide-react";
 import PrivacyPolicyModal from "./PrivacyPolicyModal";
+import TermsOfServiceModal from "./TermsOfServiceModal";
 
 interface StepConsentProps {
   onComplete: () => void;
@@ -66,13 +67,14 @@ const StepConsent = ({ onComplete }: StepConsentProps) => {
             </button>
           </PrivacyPolicyModal>
           <span style={{ color: 'hsl(12, 8%, 35%)' }}>•</span>
-          <a 
-            href="#" 
-            className="text-xs transition-colors hover:opacity-80"
-            style={{ color: 'hsl(12, 8%, 45%)' }}
-          >
-            Terms of Service
-          </a>
+          <TermsOfServiceModal>
+            <button 
+              className="text-xs transition-colors hover:opacity-80"
+              style={{ color: 'hsl(12, 8%, 45%)' }}
+            >
+              Terms of Service
+            </button>
+          </TermsOfServiceModal>
         </div>
       </div>
     </div>
