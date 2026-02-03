@@ -34,24 +34,24 @@ const StepProof = ({ onNext }: StepProofProps) => {
   const pathLength = 400;
 
   return (
-    <div className="earth-container">
-      <div className="flex flex-col items-center text-center max-w-lg space-y-10">
+    <div className="earth-container py-6">
+      <div className="flex flex-col items-center text-center max-w-lg space-y-6">
         {/* Header */}
-        <div className="space-y-4 animate-earth-fade-in opacity-0">
+        <div className="space-y-3 animate-earth-fade-in opacity-0">
           <p className="earth-tagline">The Proof</p>
           <h2 className="earth-title text-3xl md:text-4xl">
-            Join the <span className="neon-glow">95%</span>.
+            Stop <span className="neon-glow">Guessing</span>.
           </h2>
-          <p className="earth-subtitle max-w-sm">
-            AI-guided care eliminates the guesswork that leads to loss.
+          <p className="earth-subtitle max-w-sm text-base">
+            BonsaiBuddy Pro provides the precision logic you need to keep your trees thriving through every season.
           </p>
         </div>
 
         {/* Animated Line Chart */}
-        <div className="w-full earth-card animate-earth-scale opacity-0 delay-300">
+        <div className="w-full earth-card p-5 animate-earth-scale opacity-0 delay-300">
           <svg 
             viewBox={`0 0 ${chartWidth} ${chartHeight}`} 
-            className="w-full h-48"
+            className="w-full h-36"
             preserveAspectRatio="xMidYMid meet"
           >
             {/* Grid lines */}
@@ -137,20 +137,20 @@ const StepProof = ({ onNext }: StepProofProps) => {
           </svg>
           
           {/* Legend */}
-          <div className="flex items-center justify-center gap-8 mt-6 pt-4" style={{ borderTop: '1px solid hsl(0 0% 100% / 0.08)' }}>
+          <div className="flex items-center justify-center gap-6 mt-4 pt-3" style={{ borderTop: '1px solid hsl(0 0% 100% / 0.08)' }}>
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-sm" style={{ background: '#ef4444' }} />
-              <span className="text-xs" style={{ color: 'hsl(12, 8%, 55%)' }}>Without AI</span>
+              <div className="w-2.5 h-2.5 rounded-sm" style={{ background: '#ef4444' }} />
+              <span className="text-xs" style={{ color: 'hsl(12, 8%, 55%)' }}>Without Pro</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-sm neon-dot" />
-              <span className="text-xs" style={{ color: 'hsl(12, 8%, 55%)' }}>With BonsaiBuddy</span>
+              <div className="w-2.5 h-2.5 rounded-sm neon-dot" />
+              <span className="text-xs" style={{ color: 'hsl(12, 8%, 55%)' }}>With BonsaiBuddy Pro</span>
             </div>
           </div>
         </div>
 
         {/* Continue */}
-        <div className="animate-earth-fade-in opacity-0 delay-500 pt-4">
+        <div className="animate-earth-fade-in opacity-0 delay-500 pt-2">
           <button onClick={onNext} className="earth-button-primary">
             See How It Works
           </button>
